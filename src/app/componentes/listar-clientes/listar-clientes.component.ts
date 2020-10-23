@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientesTransporteService } from 'src/app/services/clientes-transporte.service';
+import { CuentasTransporteService } from 'src/app/services/cuentas-transporte.service';
 import { ClientesService } from 'src/app/services/clientes.service';
 import { Clientes } from 'src/app/models/clientes';
 
@@ -16,7 +17,8 @@ export class ListarClientesComponent implements OnInit {
 
   constructor(
     private clienteServ: ClientesService,
-    private clientesTransport: ClientesTransporteService
+    private clientesTransport: ClientesTransporteService,
+    private cuentasTransporteService: CuentasTransporteService
   ) {
     this.clientesTransport.clientesObservable.subscribe( refrescar => {
       if(refrescar){
@@ -56,5 +58,11 @@ export class ListarClientesComponent implements OnInit {
     else {
       this.selectedRowIds.add(id);
     }
+    const cliSel = {
+      listaClientes: this.listaClientes,
+      idClientesSel: this.selectedRowIds
+    }
+    
+    this.cuentasTransporteService.enviarClientesSeleccionados(cliSel);
   }
 }

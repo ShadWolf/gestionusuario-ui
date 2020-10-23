@@ -1,1 +1,11 @@
-<p>listar-cuentas works!</p>
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+    <table class="table table-bordered mb-1">
+      <tbody>
+          <tr *ngFor="let cuenta of listaCuentas" >
+              <td>{{cuenta.nombre}} - {{cuenta.apellido}}</td>
+          </tr>
+      </tbody>
+  
+  </table>
+  </div>

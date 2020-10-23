@@ -1,1 +1,9 @@
-<p>crear-cuentas works!</p>
+<div class="form-group">
+    <label>Cuentas:</label>
+    <input type="text" class="form-control" maxlength="200" [(ngModel)]="cuentasForm.cuentas">
+</div>
+<div>
+    <label>idClientes Selecionados:</label>
+    <span *ngFor="let id of cuentasForm.idClientes"> {{id}},</span>
+</div>
+<button (click)="guardarCuentas()" >Guardar</button>
