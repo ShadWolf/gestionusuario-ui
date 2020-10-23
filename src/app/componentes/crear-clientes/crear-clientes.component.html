@@ -1,0 +1,12 @@
+<p>Crear un Nuevo cliente</p>
+<div class="form-group">
+    <label>Nombre:</label>
+    <input type="text" [(ngModel)]="clienteForm.nombre" class="form-control">
+</div>
+
+<div class="form-group">
+    <label>Apellido:</label>
+    <input type="text" [(ngModel)]="clienteForm.apellido" class="form-control">
+</div>
+
+<button (click)="guardarCliente()">Guardar</button>

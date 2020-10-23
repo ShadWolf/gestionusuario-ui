@@ -1,0 +1,12 @@
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+  <table class="table table-bordered mb-1">
+    <tbody>
+        <tr *ngFor="let cliente of listaClientes" [class.selectedRow]="seleccionaIdLinea(cliente.id)"
+        (click)="onLineaClick(cliente.id)" style="cursor: pointer;">
+            <td>{{cliente.nombre}} - {{cliente.apellido}}</td>
+        </tr>
+    </tbody>
+
+</table>
+</div>
